@@ -20,7 +20,7 @@ const Signup = () => {
             </FormControl>
             <FormControl isRequired>
                 <FormLabel>Email</FormLabel>
-                <Input type="text" placeholder="example@email.com" />
+                <Input type="text" placeholder="thomas.shelby@birmingham.com" />
             </FormControl>
             <FormControl isRequired>
                 <FormLabel>Password</FormLabel>
@@ -54,7 +54,7 @@ const Signup = () => {
             </FormControl>
             <FormControl>
                 <FormLabel>Upload Profile Picture</FormLabel>
-                <Input p={1.5} type="file" accept="image/*" />
+                <Input p={"0.28rem"} type="file" accept="image/*" />
             </FormControl>
             <Button variant={"solid"} colorScheme="blue" w={"100%"}>
                 Sign Up
