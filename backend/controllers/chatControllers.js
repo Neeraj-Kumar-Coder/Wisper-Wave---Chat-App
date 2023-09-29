@@ -160,11 +160,11 @@ const removeFromGroup = asyncHandler(async (req, res) => {
         .populate("users", "-password")
         .populate("groupAdministrator", "-password");
 
-    if (!added) {
+    if (!removed) {
         res.status(404);
         throw new Error("Chat Not Found");
     } else {
-        res.json(added);
+        res.json(removed);
     }
 });
 
