@@ -8,7 +8,7 @@ import {
     VStack,
     useToast,
 } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -18,11 +18,6 @@ const Login = () => {
     const [loading, setLoading] = useState(false);
     const toast = useToast();
     const navigate = useNavigate();
-
-    useEffect(() => {
-        const userInfo = localStorage.getItem("user-info");
-        if (userInfo) navigate("/chats");
-    }, [navigate]);
 
     const onChangeHandler = (event) => {
         setFormData({

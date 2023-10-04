@@ -1,7 +1,15 @@
 import React from "react";
+import { ChatState } from "../contexts/ChatProvider";
+import NavBar from "./NavBar";
 
 const Chats = () => {
-    return <div>Chats</div>;
+    const { user } = ChatState();
+
+    return (
+        <>
+            <NavBar />
+        </>
+    );
 };
 
 export default Chats;

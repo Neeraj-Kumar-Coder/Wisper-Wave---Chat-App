@@ -14,12 +14,12 @@ const ChatProvider = ({ children }) => {
     }, [navigate]);
 
     return (
-        <ChatContext.Provider value={{ user }}>{children}</ChatContext.Provider>
+        <ChatContext.Provider value={{ user, setUser }}>
+            {children}
+        </ChatContext.Provider>
     );
 };
 
-export const ChatState = () => {
-    return useContext(ChatContext);
-};
+export const ChatState = () => useContext(ChatContext);
 
 export default ChatProvider;

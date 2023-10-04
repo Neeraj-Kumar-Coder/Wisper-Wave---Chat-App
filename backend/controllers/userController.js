@@ -3,7 +3,7 @@ const User = require("../models/user");
 const generateToken = require("../config/generateToken");
 
 const registerUser = asyncHandler(async (req, res) => {
-    const { name, email, password, pic } = req.body;
+    const { name, email, password, profilePicture } = req.body;
 
     if (!name || !email || !password) {
         res.status(400);
@@ -20,7 +20,7 @@ const registerUser = asyncHandler(async (req, res) => {
         name,
         email,
         password,
-        pic,
+        profilePicture,
     });
 
     if (newUser) {
@@ -28,7 +28,7 @@ const registerUser = asyncHandler(async (req, res) => {
             _id: newUser._id,
             name: newUser.name,
             email: newUser.email,
-            pic: newUser.pic,
+            profilePicture: newUser.profilePicture,
             token: generateToken(newUser._id),
         });
     } else {
@@ -47,7 +47,7 @@ const authUser = asyncHandler(async (req, res) => {
             _id: userExists._id,
             name: userExists.name,
             email: userExists.email,
-            pic: userExists.pic,
+            profilePicture: userExists.profilePicture,
             token: generateToken(userExists._id),
         });
     } else {
